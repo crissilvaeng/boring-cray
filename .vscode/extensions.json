@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "coenraads.bracket-pair-colorizer-2",
+        "dongli.python-preview",
+        "eamodio.gitlens",
+        "formulahendry.code-runner",
+        "humao.rest-client",
+        "ms-vsliveshare.vsliveshare",
+        "njpwerner.autodocstring",
+        "njqdev.vscode-python-typehint",
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker",
+        "visualstudioexptteam.vscodeintellicode",
+    ]
+}
