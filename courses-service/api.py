@@ -1,30 +1,14 @@
 import seed
 
-from model import Course, Session, Term
+from model import Course
 from config import app, ma
 from flask import jsonify
 
 
-class SessionSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = Session
-        fields = ['code', 'start', 'end']
-
-
-class TermSchema(ma.SQLAlchemyAutoSchema):
-    session = ma.Nested(SessionSchema)
-
-    class Meta:
-        model = Term
-        fields = ['code', 'professor', 'session']
-
-
 class CourseSchema(ma.SQLAlchemyAutoSchema):
-    terms = ma.Nested(TermSchema, many=True)
-
     class Meta:
         model = Course
-        fields = ['code', 'name', 'terms']
+        fields = ['code', 'name']
 
 
 single_course_schema = CourseSchema()
