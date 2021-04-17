@@ -12,6 +12,6 @@ class Task(db.Model):
 class Submission(db.Model):
     __tablename__ = 'submission'
     id = db.Column(db.Integer, primary_key=True)
-    status = db.Column(db.String(15), nullable=False, default='PENDING')
     student = db.Column(db.String(127), nullable=False)
+    score = db.Column(db.Integer, default=0)
     task_id = db.Column(db.Integer, db.ForeignKey('task.id'))

@@ -3,12 +3,6 @@ from config import db
 
 COURSE_CODE = '6.0001'
 
-STUDENTS = [
-    'albert.einstein@al.infnet.edu.br',
-    'marie.curie@al.infnet.edu.br',
-    'nicolas.tesla@al.infnet.edu.br',
-]
-
 TASKS = [
     {'description': 'What is computation?', 'course': COURSE_CODE},
     {'description': 'Branching and Iteration', 'course': COURSE_CODE},
@@ -19,15 +13,11 @@ TASKS = [
     {'description':  'Object Oriented Programming', 'course': COURSE_CODE}
 ]
 
-SUBMISSIONS = [({'student': student}) for student in STUDENTS]
-
 db.create_all()
 
 
 def populate():
     for task_seed in TASKS:
         task = Task(**task_seed)
-        for submission_seed in SUBMISSIONS:
-            task.submissions.append(Submission(**submission_seed))
         db.session.add(task)
     db.session.commit()

@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  app:
+  workspace:
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,3 +15,8 @@ services:
       - ..:/workspace:cached
     entrypoint: /usr/local/share/docker-init.sh
     command: sleep infinity
+  broker:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
